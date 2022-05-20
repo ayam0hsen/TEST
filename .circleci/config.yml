@@ -26,7 +26,7 @@ jobs:
 workflows:
   say-hello-workflow:
     jobs:
-      #- say-hello-workflow/run
+      - say-hello-workflow/run
       - print-hello
       - print-name:
            requires: [print-hello]
