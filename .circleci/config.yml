@@ -5,6 +5,14 @@ version: 2.1
   # Declare a dependency on the welcome-orb
   #say-hello-workflow: circleci/welcome-orb@0.4.1
 # Orchestrate or schedule a set of jobs
+workflows:
+  say-hello-workflow:
+    jobs:
+     # - say-hello-workflow/run
+    #  - print-hello
+      - print-name 
+        #   requires: [print-hello]
+        
 jobs:
 #  print-hello:
  #   docker:
@@ -23,10 +31,4 @@ jobs:
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
-workflows:
-  say-hello-workflow:
-    jobs:
-     # - say-hello-workflow/run
-    #  - print-hello
-      - print-name 
-        #   requires: [print-hello]
+
