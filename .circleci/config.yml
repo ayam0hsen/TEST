@@ -25,5 +25,4 @@ workflows:
       #- say-hello-workflow/run
       - print-hello
       - print-world:
-           requires: 
-              - print-hello
+           requires: [print-hello]
