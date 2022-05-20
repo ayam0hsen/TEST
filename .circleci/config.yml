@@ -22,7 +22,7 @@ jobs:
 workflows:
   say-hello-workflow:
     jobs:
-      - welcome/run
+      - say-hello-workflow/run
       - print-hello
       - print-world
       requires: print-hello
