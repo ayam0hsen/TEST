@@ -11,11 +11,11 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - run: echo hello
-  print-world:
+  print-name:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - run: echo world
+      - run: echo << AYA_VAR>>
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -24,5 +24,5 @@ workflows:
     jobs:
       #- say-hello-workflow/run
       - print-hello
-      - print-world:
+      - print-name:
            requires: [print-hello]
